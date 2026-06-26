@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sri Venkateswara Engg Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f5f2eb;
+            color: #1e2b2f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .header {
+            background: linear-gradient(145deg, #1e3c3f, #0f2629);
+            color: #f5e7d9;
+            padding: 2rem 0 1.5rem;
+            border-bottom: 6px solid #b8863a;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #0a1a1c;
+        }
+
+        .header .subhead {
+            font-size: 1.2rem;
+            color: #dac09a;
+            margin-top: 6px;
+            font-weight: 300;
+        }
+
+        .header .establishment {
+            display: inline-block;
+            background: #b8863a;
+            color: #0f2629;
+            font-weight: 600;
+            padding: 0.2rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .contact-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2.5rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(2px);
+            border: 1px solid #b8863a55;
+        }
+
+        .contact-badge a, .contact-badge span {
+            color: #f0e3d0;
+            text-decoration: none;
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .contact-badge i {
+            font-style: normal;
+            font-weight: 600;
+            color: #dbb06b;
+        }
+
+        /* navigation tabs */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.8rem;
+            margin: 1.8rem 0 1rem;
+            border-bottom: 2px solid #dac09a55;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-tabs button {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2d494d;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-tabs button:hover {
+            background: #b8863a20;
+        }
+
+        .nav-tabs .active {
+            background: #b8863a;
+            color: #fefcf7;
+            box-shadow: 0 4px 8px #b8863a50;
+        }
+
+        /* page content */
+        .page {
+            display: none;
+            background: #fefcf7;
+            padding: 2.5rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            margin: 1.8rem 0 3rem;
+            border: 1px solid #ece3d6;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page h2 {
+            font-size: 2rem;
+            color: #1e3c3f;
+            border-left: 6px solid #b8863a;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page p, .page li {
+            color: #2a3f42;
+        }
+
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.8rem 0 0.5rem;
+        }
+
+        .deals-grid span {
+            background: #ede7dd;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1e3c3f;
+            text-align: center;
+            border: 1px solid #dac09a;
+            box-shadow: inset 0 1px 4px #ffffffcc;
+        }
+
+        .highlight-box {
+            background: #f6f0e7;
+            padding: 1.2rem 1.8rem;
+            border-radius: 24px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #b8863a;
+        }
+
+        .contact-detail {
+            background: #f2eee8;
+            padding: 1.5rem;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+        }
+
+        .contact-detail p {
+            margin: 0.6rem 0;
+        }
+
+        .contact-detail strong {
+            color: #1e3c3f;
+            font-weight: 700;
+        }
+
+        .footer {
+            background: #0f2629;
+            color: #dac09a;
+            padding: 2rem 0 1.2rem;
+            margin-top: 1.5rem;
+            border-radius: 40px 40px 0 0;
+            text-align: center;
+        }
+
+        .footer small {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.6rem;
+        }
+
+        .footer a {
+            color: #dbb06b;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .footer-links {
+            margin: 0.8rem 0 0.4rem;
+        }
+
+        @media (max-width: 650px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .contact-badge {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                border-radius: 30px;
+                background: rgba(0,0,0,0.2);
+            }
+            .nav-tabs button {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+            .page {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <h1>SRI SRI VENKATESWARA ENGG COMPANY</h1>
+            <div class="subhead">📍 Kurnool · Andhra Pradesh</div>
+            <div class="establishment">⚙️ EST. 1969</div>
+
+            <div class="contact-badge">
+                <span><i>👤</i> Krishna Kiran Addanki</span>
+                <a href="mailto:krishnakiranaddanki@gmail.com"><i>✉</i> krishnakiranaddanki@gmail.com</a>
+                <span><i>📞</i> 7013159009</span>
+                <span><i>🏢</i> KURNOOL 518001 (AP)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <div class="container">
+        <div class="nav-tabs" id="navTabs">
+            <button class="active" data-page="home">🏠 Home</button>
+            <button data-page="privacy">🔒 Privacy Policy</button>
+            <button data-page="terms">📜 Terms & Conditions</button>
+            <button data-page="contact">📞 Contact</button>
+        </div>
+
+        <!-- PAGES -->
+        <!-- HOME -->
+        <div class="page active" id="page-home">
+            <h2>Welcome to Sri Sri Venkateswara</h2>
+            <p style="font-size:1.1rem; margin-bottom: 0.5rem;"><strong>Since 1969</strong> — trusted name in engineering and agricultural solutions.</p>
+            <div class="highlight-box">
+                <p style="font-weight: 500;">📍 <strong>Address:</strong> Kurnool 518001, Andhra Pradesh</p>
+                <p>📧 <strong>Email:</strong> krishnakiranaddanki@gmail.com  ·  📞 <strong>Phone:</strong> 7013159009</p>
+                <p><strong>Proprietor:</strong> Krishna Kiran Addanki</p>
+            </div>
+
+            <h3 style="margin: 1.2rem 0 0.6rem; color: #1e3c3f;">⚡ Deals In</h3>
+            <div class="deals-grid">
+                <span>🔧 Plumbing</span>
+                <span>🚽 Sanitary</span>
+                <span>💧 Ashirwad Water Tank</span>
+                <span>🌾 Agri Sprayers</span>
+                <span>🔋 Battery Sprayer</span>
+                <span>🌿 Power Weeder</span>
+                <span>🛢️ Diesel Oil Engine</span>
+                <span>⚡ Generator</span>
+            </div>
+            <p style="margin-top: 1.5rem; font-style: italic; color: #3d5a5e;">“Quality products, reliable service — serving the region for over five decades.”</p>
+        </div>
+
+        <!-- PRIVACY POLICY -->
+        <div class="page" id="page-privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> June 2026</p>
+            <p>Sri Sri Venkateswara Engg Company (“we”, “our”, “us”) respects your privacy. This policy describes how we handle your personal information when you interact with us.</p>
+            <ul style="margin: 1rem 0 1rem 1.8rem; list-style-type: disc;">
+                <li><strong>Information we collect:</strong> We may collect your name, email address, phone number, and address when you contact us or request a quote.</li>
+                <li><strong>How we use it:</strong> To respond to inquiries, provide quotes, process orders, and improve our services.</li>
+                <li><strong>Sharing:</strong> We do not sell or share your personal data with third parties, except as required by law.</li>
+                <li><strong>Data security:</strong> We take reasonable measures to protect your information from unauthorized access.</li>
+                <li><strong>Cookies:</strong> This website does not use cookies or tracking technologies.</li>
+                <li><strong>Contact:</strong> For any privacy questions, reach us at <a href="mailto:krishnakiranaddanki@gmail.com">krishnakiranaddanki@gmail.com</a> or call 7013159009.</li>
+            </ul>
+            <p>By using our services, you consent to this Privacy Policy.</p>
+        </div>
+
+        <!-- TERMS & CONDITIONS -->
+        <div class="page" id="page-terms">
+            <h2>Terms & Conditions</h2>
+            <p><strong>Effective date:</strong> June 2026</p>
+            <p>Welcome to Sri Sri Venkateswara Engg Company. By accessing our services, you agree to the following terms:</p>
+            <ol style="margin: 1rem 0 1rem 1.8rem; list-style-type: decimal;">
+                <li><strong>Use of information:</strong> All product details, pricing, and availability are subject to change without notice.</li>
+                <li><strong>Ordering:</strong> Orders are confirmed only after we verify availability and payment (if applicable).</li>
+                <li><strong>Warranty:</strong> Products come with manufacturer’s warranty where applicable. We assist with claims but are not liable for third-party defects.</li>
+                <li><strong>Liability:</strong> We are not liable for any indirect, incidental, or consequential damages arising from product use.</li>
+                <li><strong>Governing law:</strong> These terms are governed by the laws of Andhra Pradesh, India.</li>
+                <li><strong>Changes:</strong> We may update these terms from time to time. Continued use constitutes acceptance.</li>
+            </ol>
+            <p>For any clarifications, please <a href="#" data-page="contact" class="nav-link-internal">contact us</a>.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="page" id="page-contact">
+            <h2>Contact Us</h2>
+            <div class="contact-detail">
+                <p><strong>🏢 Sri Sri Venkateswara Engg Company</strong></p>
+                <p>Kurnool 518001, Andhra Pradesh (India)</p>
+                <p><strong>📧 Email:</strong> <a href="mailto:krishnakiranaddanki@gmail.com">krishnakiranaddanki@gmail.com</a></p>
+                <p><strong>📞 Phone:</strong> 7013159009</p>
+                <p><strong>👤 Proprietor:</strong> Krishna Kiran Addanki</p>
+                <p><strong>📅 Establishment:</strong> 1969</p>
+            </div>
+            <div style="background: #e3dbcf; padding: 1.2rem; border-radius: 20px;">
+                <p style="font-weight: 600;">📍 Visit our showroom or get in touch for inquiries about:</p>
+                <ul style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; margin-top: 0.5rem;">
+                    <li>🔧 Plumbing & Sanitary</li>
+                    <li>💧 Ashirwad Water Tank</li>
+                    <li>🌾 Agri Sprayers & Power Weeder</li>
+                    <li>🛢️ Diesel Engines & Generators</li>
+                </ul>
+            </div>
+            <p style="margin-top: 1.2rem;">We’re here to help — call or email us anytime.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER with copyright -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" data-page="privacy" class="nav-link-internal">Privacy Policy</a> 
+                <span style="color: #4d6a6e;">|</span> 
+                <a href="#" data-page="terms" class="nav-link-internal">Terms & Conditions</a> 
+                <span style="color: #4d6a6e;">|</span> 
+                <a href="#" data-page="contact" class="nav-link-internal">Contact</a>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 1rem;">
+                &copy; 2026 Sri Sri Venkateswara Engg Company · All rights reserved.
+            </p>
+            <small>📍 Kurnool 518001, Andhra Pradesh · Established 1969</small>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // navigation: tabs and internal links
+            const pages = {
+                home: document.getElementById('page-home'),
+                privacy: document.getElementById('page-privacy'),
+                terms: document.getElementById('page-terms'),
+                contact: document.getElementById('page-contact')
+            };
+
+            const navButtons = document.querySelectorAll('#navTabs button');
+            const internalLinks = document.querySelectorAll('.nav-link-internal');
+
+            function showPage(pageId) {
+                // hide all pages
+                Object.keys(pages).forEach(key => {
+                    pages[key].classList.remove('active');
+                });
+                // show selected
+                if (pages[pageId]) {
+                    pages[pageId].classList.add('active');
+                }
+                // update button active state
+                navButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.page === pageId) {
+                        btn.classList.add('active');
+                    }
+                });
+                // scroll to top of page content smoothly
+                const top = document.querySelector('.container');
+                if (top) {
+                    top.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            // tab buttons
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const pageId = this.dataset.page;
+                    if (pageId && pages[pageId]) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // internal links (footer / terms link)
+            internalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.dataset.page;
+                    if (pageId && pages[pageId]) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // set default: home (already active)
+            // but if any hash on load ? 
+            const hash = window.location.hash.replace('#', '');
+            if (hash && pages[hash]) {
+                showPage(hash);
+            }
+
+            // optional: expose to console for debugging
+            window.showPage = showPage;
+        })();
+    </script>
+</body>
+</html>
